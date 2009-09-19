@@ -1,0 +1,5 @@
+h1. Worked Examples for SICP
+
+This is my worked examples for the "SICP book":http://mitpress.mit.edu/sicp/full-text/book/book.html.  The work is divided up into weekly studies, based around the "video lectures":http://www.archive.org/details/mit_ocw_sicp.  I am doing this in conjuction with the "Wizard Book Study Group":http://groups.google.com/group/wizardbookstudy?hl=en.
+
+My goal is to work the exercises in Scheme and then try to do them in Clojure.  Since I am pretty new to both langauges I may have to focus just on Scheme. We'll see how it goes. :)
