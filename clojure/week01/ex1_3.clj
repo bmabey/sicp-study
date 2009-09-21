@@ -18,6 +18,8 @@
 )
 
 (squared-sum-of-two-greatest 2 1 3)
+; # => 13
 (squared-sum-of-two-greatest 5 5 9)
+; # => 106
 (squared-sum-of-two-greatest 1 3 4)
-
+; # => 25
