@@ -13,14 +13,15 @@
 (defn within-delta? [x y delta]
   (<= (abs (- x y)) delta))
 
-(defn sqrt-iter [old-guess guess x]
-  (if (within-delta? old-guess guess 0.000001)
-    guess
-    (sqrt-iter guess (improve guess x) x)
-    ))
-
 (defn sqrt [x]
-  (sqrt-iter 0.0 1.0 x))
+  (let [improve (fn [guess x]
+                  (average (list guess (/ x guess))))
+        sqrt-iter (fn [old-guess guess x]
+                    (if (within-delta? old-guess guess 0.000001)
+                      guess
+                      (sqrt-iter guess (improve guess x) x)
+                      ))]
+    (sqrt-iter 0.0 1.0 x)))
 
 (sqrt 9)
 
