@@ -29,20 +29,18 @@
 (define (average x y)
   (/ (+ x y) 2))
 
-(define (improve guess x)
-  (average guess (/ x guess)))
-
 (define (within-delta? x y delta)
   (<= (abs (- x y)) delta))
 
-
-(define (sqrt-iter old-guess guess x)
-  (if (within-delta? old-guess guess 0.000001)
-      guess
-      (sqrt-iter guess (improve guess x)
-                 x)))
-
 (define (sqrt x)
+  (define (improve guess x)
+    (average guess (/ x guess)))
+  (define (sqrt-iter old-guess guess x)
+    (if (within-delta? old-guess guess 0.000001)
+        guess
+        (sqrt-iter guess (improve guess x)
+                   x)))
+
   (sqrt-iter 0.0 1.0 x))
 
 (sqrt 9)
