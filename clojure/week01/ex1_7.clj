@@ -16,7 +16,7 @@
         sqrt-iter (fn [old-guess guess x]
                     (if (within-delta? old-guess guess 0.000001)
                       guess
-                      (sqrt-iter guess (improve guess x) x)
+                      (recur guess (improve guess x) x)
                       ))]
     (sqrt-iter 0.0 1.0 x)))
 
