@@ -7,9 +7,6 @@
 (defn average [numbers]
   (/ (apply + numbers) (count numbers)))
 
-(defn improve [guess x]
-  (average (list guess (/ x guess))))
-
 (defn within-delta? [x y delta]
   (<= (abs (- x y)) delta))
 
