@@ -26,15 +26,15 @@
 (define (square x)
   (* x x))
 
-(define (average x y)
-  (/ (+ x y) 2))
+(define (average numbers)
+    (/ (apply + numbers) (length numbers)))
 
 (define (within-delta? x y delta)
   (<= (abs (- x y)) delta))
 
 (define (sqrt x)
   (define (improve guess x)
-    (average guess (/ x guess)))
+    (average (list guess (/ x guess))))
   (define (sqrt-iter old-guess guess x)
     (if (within-delta? old-guess guess 0.000001)
         guess
