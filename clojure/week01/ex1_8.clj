@@ -1,3 +1,6 @@
+; Newton's Method for finding Cube Root, using the approach in 1.7.
+(ns sicpstudy.week01 (:use clojure.contrib.test-is))
+
 (defn square [x]
   (* x x))
 
@@ -18,6 +21,13 @@
     (cbrt-iter 0.0 1.0 x)))
 
 (cbrt 27)
+(cbrt 8E15)
+(cbrt 8E-15)
 
 
+(deftest test-cbrt
+  (is (within-delta? (cbrt 8E15) 2E5 0.000001))
+  (is (within-delta? (cbrt 8E-15) 2E-5 0.000001))
+  (is (within-delta? (cbrt 27) 3.0 0.000001)))
 
+(run-tests)
