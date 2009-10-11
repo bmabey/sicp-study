@@ -2,7 +2,7 @@
 (require (planet schematics/schemeunit:3))
 
 ; SICP Exercise 1.19
-; Did algebra on paper...
+; My alegraba for this problem can be found in ex1_19.tex.  I should really look into SLaTeX...
 
 (define (fib-tree-recusive-process n)
  (cond ((= n 0) 0)
