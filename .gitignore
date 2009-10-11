@@ -2,3 +2,7 @@ sicp.pdf
 lecture_videos
 *.sw?
 *.*~
+*.dvi
+*.aux
+*.log
+*.pdf
