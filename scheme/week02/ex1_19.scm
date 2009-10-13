@@ -39,6 +39,15 @@
   (fib-iter 1 0 0 1 n))
 
 
+(define (expmod base exp m) 
+  (cond ((= exp 0) 1) 
+        ((even? exp) 
+         (remainder (square (expmod base (/ exp 2) m)) 
+                    m))
+        (else 
+         (remainder (* base (expmod base (- exp 1) m)) 
+                    m))))
+
 
 (check-eq? (fib-tree-recusive-process 8) 21)
 (check-eq? (fib-iterative-process 8) 21)
