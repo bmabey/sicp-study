@@ -53,8 +53,18 @@
   (newline)
   (loop (+ 1 starting-num) 0))
 
-(find-three-primes 1000)
-(find-three-primes 10000)
-(find-three-primes 100000)
-(find-three-primes 1000000)
+;(sqrt 10) => 3.1622776601683795
+(find-three-primes 1000) ; (+ 23 23 22) =>  68 
+(find-three-primes 10000) ; (+ 59 59 59) => 177: 2.6029411764705883x slower
+(find-three-primes 100000); (+ 174 305 176) => 655: 3.7005649717514126x slower
+(find-three-primes 1000000); (+ 549 568 563) => 1680: 2.564885496183206x slower
+
+(find-three-primes 100000000000)  ; (+ 481263 410991 435095) => 1327349
+(find-three-primes 1000000000000)  ; (+ 1337185 1315346 1309145) => 3961676: 2.7784911784201154x slower
+(find-three-primes 10000000000000) ; (+ 4159272 4121860 4173517) => 12454649: 3.1437828333260973x slower
+(find-three-primes 100000000000000) ; (+ 13032210 13068029 12948528) => 39048767: 3.1352763935780126x slower
+
+
+; When I bump the numbers up higher I see the (sqrt 10) slowdown that is expected for the algorhtim showing that it is indeed theta(sqrt(n)) runtime.
+
 
