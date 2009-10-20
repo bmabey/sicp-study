@@ -1,5 +1,4 @@
 #lang scheme/base
-(require (planet schematics/schemeunit:3))
 
 (define (cube x) (* x x x))
 
