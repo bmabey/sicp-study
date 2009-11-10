@@ -11,10 +11,10 @@
 
 
 (define (fringe tree)
- (define (loop tree leaves)
-  (cond ((null? tree) leaves)
-    ((not (pair? tree)) (list tree))
-    (else (loop
+  (define (loop tree leaves)
+    (cond ((null? tree) leaves)
+      ((not (pair? tree)) (list tree))
+      (else (loop
            (cdr tree)
            (append leaves (fringe (car tree)))))))
  (loop tree (list)))
