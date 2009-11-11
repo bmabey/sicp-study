@@ -39,9 +39,9 @@
 (define fold-right accumulate)
 
 ; (fold-right / 1 (list 1 2 3))
-; 1.5
+; 1.5   (/ 1 (/ 2 3))
 ; (fold-left / 1 (list 1 2 3))
-; 0.16666666666666666  (/ 0.5 3)
+; 0.16666666666666666  (/ (/ 1 2) 3)
 ; (fold-right list nil (list 1 2 3))
 ; (1 (2 (3 ())))
 ; (fold-left list nil (list 1 2 3))
