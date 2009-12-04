@@ -65,9 +65,7 @@
 (define (deriv-expt expt-exp)
  (let ((base (base expt-exp))
        (exponent (exponent expt-exp)))
-  (cond ((=number? exponent 0) 1)
-        ((=number? exponent 1) base)
-        (else (make-product exponent (make-expt base (- exponent 1)))))))
+        (make-product exponent (make-expt base (- exponent 1)))))
 
 (define (deriv exp var)
   (cond ((number? exp) 0)
@@ -89,5 +87,3 @@
 (check-equal? (deriv '(* x y) 'x) 'y)
 (check-equal? (deriv '(expt x 4) 'x) '(* 4 (expt x 3)))
 (check-equal? (deriv '(expt x 2) 'x) '(* 2 x))
-(check-equal? (deriv '(expt x 1) 'x) 'x)
-(check-equal? (deriv '(expt x 0) 'x) 1)
